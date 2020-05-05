@@ -1,0 +1,25 @@
+type Shopping {
+    id:ID!
+    quantity:Int!
+    status:String!
+    client:Client
+    product:Product!
+}
+
+input ShoppingInput {
+    id:ID
+    quantity:Int!
+    status:String!
+    clientId:ID!
+    productId:ID!
+}
+
+extend type Query {
+    shopping(id:ID!):Shopping
+    shoppings:[Shopping]!
+}
+
+extend type Mutation {
+    saveShopping(shopping:ShoppingInput!):Shopping!
+    deleteShopping(id:ID!):Boolean!
+}

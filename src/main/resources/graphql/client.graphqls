@@ -1,0 +1,21 @@
+type Client{
+    id:ID!
+    name:String!
+    email:String!
+}
+
+input ClientInput {
+    id:ID
+    name:String!
+    email:String!
+}
+
+extend type Query {
+    client(id:ID!):Client
+    clients:[Client]!
+}
+
+extend type Mutation{
+    saveClient(client:ClientInput!):Client!
+    deleteClient(id:ID!):Boolean!
+}

@@ -1,0 +1,6 @@
+type Query {
+    soma(a:Int, b:Int):Int
+}
+type Mutation{
+
+}
